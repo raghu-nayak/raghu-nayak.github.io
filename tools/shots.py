@@ -25,6 +25,8 @@ TARGETS = {
     'sf-l': ('fire', 'aufire.theme', 'light'),
     'si-d': ('inv',  'igc.theme',    'dark'),
     'si-l': ('inv',  'igc.theme',    'light'),
+    'sl-d': ('lev',  'alc.theme',    'dark'),
+    'sl-l': ('lev',  'alc.theme',    'light'),
 }
 
 
@@ -56,12 +58,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--fire', default=str(HERE.parent / 'au-fire-calculator' / 'index.html'))
     ap.add_argument('--inv', default=str(HERE.parent / 'investment-growth-calculator' / 'index.html'))
+    ap.add_argument('--lev', default=str(HERE.parent / 'au-leverage-calculator' / 'index.html'))
     args = ap.parse_args()
     if not shutil.which('cwebp'):
         sys.exit('cwebp not found — brew install webp')
     if not os.path.exists(CHROME):
         sys.exit('Google Chrome not found at %s' % CHROME)
-    srcs = {'fire': pathlib.Path(args.fire), 'inv': pathlib.Path(args.inv)}
+    srcs = {'fire': pathlib.Path(args.fire), 'inv': pathlib.Path(args.inv),
+            'lev': pathlib.Path(args.lev)}
     for name, path in srcs.items():
         if not path.exists():
             sys.exit('%s calculator not found at %s' % (name, path))
