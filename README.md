@@ -63,6 +63,7 @@ The card grid is `repeat(auto-fit,minmax(360px,1fr))`, so it goes one-up, two-up
 three-up on its own as the page widens — no breakpoint to touch when the count
 changes.
 
-## Licence
+## Copyright
 
-[mortgage.monster](https://mortgage.monster/).
+Copyright &copy; 2026 Raghu Nayak. All rights reserved. The colour palette is
+taken from [mortgage.monster](https://mortgage.monster/).
